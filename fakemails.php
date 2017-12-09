@@ -38,13 +38,11 @@ function checkfakemail( $mail )
 		return false;
 	}
 
-	foreach($FakeMailList as $mails)
+	if (in_array($domain , $FakeMailList))
 	{
-		if(stristr($mail , $mails))
-		{
-			return false;
-		}
+	    return false;
 	}
+	
 	return true;
 }
 
